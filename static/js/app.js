@@ -1,11 +1,12 @@
-// from data.js
+//Level 1: Automatic Table and Date Search// help from TA Nehal and Christian
+// from (StarterCode/static/js/data.js)
 var tableData = data;
 
-// select tbody using ds
+// select tbody from index.html using D3
 tbody = d3.select("tbody")
 
-// using Object.entries to get into key and value pairs of data inside of the table
-// and loop through them to add to the table in html
+// using Object.entries load key"sighting" and value"record" into the table
+// forEach loop to add sightings to a table in html format
 function displayData(data){
     tbody.text("")
     data.forEach(function(sighting){
@@ -15,8 +16,10 @@ function displayData(data){
     })
 })}
 
+// show table
 displayData(tableData)
 
+//user type in a date and click button to filter
 var inputText = d3.select("#datetime")
 var button = d3.select("filter-btn")
 
@@ -32,4 +35,4 @@ function changeHandler(){
 inputText.on("change", changeHandler)
 button.on("click", changeHandler)
 
-// ------------------------------------------------------------------ //
+// -------------------------------------End Level 1-------------------------- //
